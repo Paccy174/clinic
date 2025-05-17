@@ -1,0 +1,40 @@
+@extends('layouts.app')
+
+@section('title', 'Add New Student')
+
+@section('content')
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Add New Student</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="{{ route('doctor.store') }}" method="POST">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="Name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="Name" name="Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Age" class="form-label">Age</label>
+                                <input type="number" class="form-control" id="Age" name="Age" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Region" class="form-label">Region</label>
+                                <input type="text" class="form-control" id="Region" name="Region" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="Country" class="form-label">Country</label>
+                                <input type="text" class="form-control" id="Country" name="Country" required>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a href="{{ route('doctor.index') }}" class="btn btn-secondary">Cancel</a>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+@endsection
